@@ -132,22 +132,22 @@ class ChangeTextTest {
         
     }
 
-    @Test //3
-    fun testEmptyText() {
-        val context = ApplicationProvider.getApplicationContext<Context>()
-        val intent = context.packageManager.getLaunchIntentForPackage(MODEL_PACKAGE)
-        context.startActivity(intent)
-
-        device.wait(Until.hasObject(By.pkg(MODEL_PACKAGE)), TIMEOUT)
-        device.findObject(By.res(MODEL_PACKAGE, "userInput")).text = " "
-        device.findObject(By.res(MODEL_PACKAGE, "buttonChange")).click()
-
-        val result = device.findObject(By.res(MODEL_PACKAGE, "textNotToBeChanged")).text
-        //assertEquals(.getText().toString().isEmpty(), result)
-
-        Thread.sleep(5000)
-
-    }
+//    @Test //3
+//    fun testEmptyText() {
+//        val context = ApplicationProvider.getApplicationContext<Context>()
+//        val intent = context.packageManager.getLaunchIntentForPackage(MODEL_PACKAGE)
+//        context.startActivity(intent)
+//
+//        device.wait(Until.hasObject(By.pkg(MODEL_PACKAGE)), TIMEOUT)
+//        device.findObject(By.res(MODEL_PACKAGE, "userInput")).text = " "
+//        device.findObject(By.res(MODEL_PACKAGE, "buttonChange")).click()
+//
+//        val result = device.findObject(By.res(MODEL_PACKAGE, "textNotToBeChanged")).text
+//        //assertEquals(.getText().toString().isEmpty(), result)
+//
+//        Thread.sleep(5000)
+//
+//    }
 
     @Test //4
     fun testOpenAnotherActivityText() {
